@@ -28,6 +28,17 @@ $ chmod u+x path/to/guardian.sh
     $ ./guardian.sh
 
 
+## Configuration
+
+Open `guardian.sh` and set your configurations.
+
+    SRC="$HOME/Sites/"                  # Source directory
+    MAIN="/Volumes/BACKUP"              # External Volume
+    DIST="$MAIN/PROJECTS"               # Destination directory
+    LOGS="_logs"                        # Logs directory
+    EXCLUDE="$DIST/bkp_excludes.txt"    # Exclude list files on sync
+
+
 ## Bonus
 
 If you prefer, put the following **alias** inside your `.bashrc` file:
