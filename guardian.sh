@@ -59,7 +59,7 @@ if [ ! -w "$DIST" ]; then
 fi
 
 if [ ! -d "$LOGS" ]; then
-    mkdir _logs
+    mkdir -p "$MAIN"/$LOGS
     exit
 fi
 
