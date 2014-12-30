@@ -3,7 +3,7 @@
 
 ## Welcome
 
-Guardian is a simple method to execute your backups with Rsync for external volumes in your local environment.
+Guardian is a simple method to execute backups in your local environment.
 
 
 ## Installation
