@@ -3,7 +3,7 @@
 
 ## Welcome
 
-Guardian is a simple method to execute your backups with Rsync for external volumes.
+Guardian is a simple method to execute your backups with Rsync for external volumes in your local environment.
 
 
 ## Installation
@@ -32,14 +32,15 @@ $ chmod u+x path/to/guardian.sh
 
 Open `guardian.sh` and set your configurations.
 
-    SRC="$HOME/Sites/"                  # Source directory
-    MAIN="/Volumes/BACKUP"              # External Volume
-    DIST="$MAIN/PROJECTS"               # Destination directory
-    LOGS="_logs"                        # Logs directory
-    EXCLUDE="$DIST/bkp_excludes.txt"    # Exclude list files on sync
+    MAIN="$HOME/DIST/PATH/GOES/HERE"        # Destination / Output Folder
+    SRC="$HOME/SRC/PATH/GOES/HERE"          # Source Files / Input Folder
+    DIST="${MAIN}/BACKUP"                   # Backup directory
+    LOGS="${MAIN}/LOGS"                     # Logs directory
 
 
 ## Bonus
+
+### Adding an alias
 
 If you prefer, put the following **alias** inside your `.bashrc` file:
 
@@ -48,6 +49,21 @@ If you prefer, put the following **alias** inside your `.bashrc` file:
 Now, you can simply run:
 
     $ guardian
+
+### Using Guardian with Crontab
+
+
+- First of all, create a text file named `backup.txt`
+- Insert: "00 6 * * 1 /path/to/script/guardian.sh && bash guardian.sh" in `backup.txt` file
+- Now, simply execute `crontab backup.txt`
+- That's it! Your cron job will work fine every week at 6:00 AM!
+
+**Crontab Options:**
+- crontab -e: edit the current job or create a new one
+- crontab -l: list cron jobs
+- crontab -r: remove a cron job
+
+> Remember: you can set the time and desired period. For more information about crontab on Unix systems, [read this guide](http://ss64.com/bash/crontab.html).
 
 
 ## License
